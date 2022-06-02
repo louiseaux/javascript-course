@@ -3,6 +3,7 @@
     <head>
         <title>Unit Converter</title>
         <link href="css/style.css" rel="stylesheet">
+        <!-- for Inter font -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
@@ -10,22 +11,27 @@
     <body>
         <header>
             <h1>Metric/Imperial unit conversion</h1>
-            <h2>20</h2>
+            <h2 id="value"></h2>
         </header>
         
         <main>
             <div class="conversions">
+                <!-- conversion 1 -->
                 <div class="conversion">
                     <h3>Length (Meter/Feet)</h3>
-                    <p>20 meters = 65.616 feet | 20 feet = 6.096 meters</p>
+                    <p id="m-ft"></p>
                 </div>
+
+                <!-- conversion 2 -->
                 <div class="conversion">
                     <h3>Volume (Liters/Gallons)</h3>
-                    <p>20 liters = 5.284 gallons | 20 gallons = 75.708 liters</p>
+                    <p id="l-gal"> liters =  gallons |  gallons =  liters</p>
                 </div>
+
+                <!-- conversion 3 -->
                 <div class="conversion">
                     <h3>Mass (Kilograms/Pounds)</h3>
-                    <p>20 kilos = 44.092 pounds | 20 pounds = 9.072 kilos</p>
+                    <p id="kg-lbs"> kilos =  pounds |  pounds =  kilos</p>
                 </div>
             </div> <!-- conversions -->
         </main>

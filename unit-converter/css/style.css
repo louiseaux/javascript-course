@@ -11,7 +11,6 @@ html, body {
 h1 {
     font-size: 22px;
     line-height: 38px;
-    letter-spacing: -0.05em;
 }
 
 h2 {
@@ -29,7 +28,6 @@ p {
 }
 
 /* Layout */
-
 header {
     background: linear-gradient(246.26deg, #585DFE 0%, #FB3796 100%);
     font-weight: 800;
@@ -45,4 +43,5 @@ header {
 
 .conversion {
     margin: 27px 0;
+    line-height: 20px;
 }
