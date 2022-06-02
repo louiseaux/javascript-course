@@ -11,7 +11,9 @@
     <body>
         <header>
             <h1>Metric/Imperial unit conversion</h1>
-            <h2 id="value"></h2>
+            <h2 id="value">Input number: </h2>
+            <input type="text" id="number">
+            <input type="button" onclick="submit()" value="Sumbit">
         </header>
         
         <main>
@@ -25,13 +27,13 @@
                 <!-- conversion 2 -->
                 <div class="conversion">
                     <h3>Volume (Liters/Gallons)</h3>
-                    <p id="l-gal"> liters =  gallons |  gallons =  liters</p>
+                    <p id="l-gal"></p>
                 </div>
 
                 <!-- conversion 3 -->
                 <div class="conversion">
                     <h3>Mass (Kilograms/Pounds)</h3>
-                    <p id="kg-lbs"> kilos =  pounds |  pounds =  kilos</p>
+                    <p id="kg-lbs"></p>
                 </div>
             </div> <!-- conversions -->
         </main>
