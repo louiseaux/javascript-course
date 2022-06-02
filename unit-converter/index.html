@@ -11,9 +11,11 @@
     <body>
         <header>
             <h1>Metric/Imperial unit conversion</h1>
-            <h2 id="value">Input number: </h2>
-            <input type="text" id="number">
-            <input type="button" onclick="submit()" value="Sumbit">
+            <h2 id="value">0</h2>
+            <h3>
+                Input number: <input type="text" id="number">
+                <input type="button" onclick="submit()" value="Sumbit">
+            </h3>
         </header>
         
         <main>
@@ -21,19 +23,19 @@
                 <!-- conversion 1 -->
                 <div class="conversion">
                     <h3>Length (Meter/Feet)</h3>
-                    <p id="m-ft"></p>
+                    <p id="m-ft">0 meters = 0.000 feet | 0 feet = 0.000 meters</p>
                 </div>
 
                 <!-- conversion 2 -->
                 <div class="conversion">
                     <h3>Volume (Liters/Gallons)</h3>
-                    <p id="l-gal"></p>
+                    <p id="l-gal">0 liters = 0.000 gallons | 0 gallons = 0.000 liters</p>
                 </div>
 
                 <!-- conversion 3 -->
                 <div class="conversion">
                     <h3>Mass (Kilograms/Pounds)</h3>
-                    <p id="kg-lbs"></p>
+                    <p id="kg-lbs">0 kilos = 0.000 pounds | 0 pounds = 0.000 kilos</p>
                 </div>
             </div> <!-- conversions -->
         </main>

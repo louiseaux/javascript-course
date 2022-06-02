@@ -37,6 +37,10 @@ header {
 }
 
 /* TODO: input styling */
+input {
+    border: none;
+    border-radius: 5px;
+}
 
 .conversions {
     background: #1f2937;
