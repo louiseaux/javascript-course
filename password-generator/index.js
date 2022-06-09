@@ -23,8 +23,8 @@ function generatePassword() {
 }
 
 function getPasswords() {
-    if ( length.value > 20 ) {
-        alert("Password length must be no more than 20 characters")
+    if ( length.value > 18 ) {
+        alert("Password length must be no more than 18 characters")
     } else {
         password1El.textContent = generatePassword()
         password2El.textContent = generatePassword()
