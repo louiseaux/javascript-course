@@ -24,13 +24,16 @@ function generatePassword() {
 function getPasswords() {
     password1El.textContent = generatePassword()
     password2El.textContent = generatePassword()
-    messageEl.textContent = " "
+    messageEl.textContent = ""
 }
 
 function copyPassword(id) {
     let password = document.getElementById(id).textContent
     if (password !== "") {
         navigator.clipboard.writeText(password)
-        messageEl.textContent = "Password copied!"
+        messageEl.textContent = "Copied!"
+        setTimeout(() => {
+            messageEl.textContent = ""
+          }, 1000);
     }
 }
