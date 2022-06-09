@@ -6,6 +6,7 @@ const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O"
 
 let password1El = document.getElementById("password1-el")
 let password2El = document.getElementById("password2-el")
+let messageEl = document.getElementById("message-el")
 
 function generateRandomNumber() {
     let randomNumber = Math.floor(Math.random() * characters.length)
@@ -23,6 +24,13 @@ function generatePassword() {
 function getPasswords() {
     password1El.textContent = generatePassword()
     password2El.textContent = generatePassword()
-    password1El.classList.add('myClass')
-    password2El.classList.add('myClass')
+    messageEl.textContent = " "
+}
+
+function copyPassword(id) {
+    let password = document.getElementById(id).textContent
+    if (password !== "") {
+        navigator.clipboard.writeText(password)
+        messageEl.textContent = "Password copied!"
+    }
 }

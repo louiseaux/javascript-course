@@ -4,7 +4,6 @@ body {
     background: #1F2937;
     color: #fff;
     font-family: 'Inter', sans-serif;
-    font-size: 16px;
 }
 
 h1 {
@@ -34,7 +33,7 @@ header {
     border-bottom: 1px solid #2F3E53;
 }
 
-button {
+#generate-el {
     margin-top: 52px;
     margin-bottom: 35px;
     padding: 9px 15px;
@@ -50,7 +49,7 @@ main {
     display: flex;
 }
 
-p {
+button {
     margin: auto;
     height: 39px;
     width: 211px;
@@ -59,12 +58,7 @@ p {
     background: #273549;
     color: #55F991;
     text-align: center;
-}
-
-.myClass {
-    padding: 4px 15px;
-    line-height: 31px;
-    height: auto;
+    font-size: 16px;
 }
 
 #password1-el {

@@ -13,13 +13,15 @@
         <header>
             <h1>Generate a <span>random password</span></h1>
             <h2>Never use an insecure password again.</h2>
-            <button onclick="getPasswords()">Generate passwords</button>
+            <button id="generate-el" onclick="getPasswords()">Generate passwords</button>
         </header>
 
         <main>
-            <p id="password1-el"></p>
-            <p id="password2-el"></p>
+            <button id="password1-el" onclick="copyPassword(this.id)"></button>
+            <button id="password2-el" onclick="copyPassword(this.id)"></button>
         </main>
+
+        <p id="message-el"></p>
 
         <script src="index.js"></script>
     </body>
