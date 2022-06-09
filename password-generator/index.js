@@ -23,9 +23,13 @@ function generatePassword() {
 }
 
 function getPasswords() {
-    password1El.textContent = generatePassword()
-    password2El.textContent = generatePassword()
-    messageEl.textContent = ""
+    if ( length.value > 20 ) {
+        alert("Password length must be no more than 20 characters")
+    } else {
+        password1El.textContent = generatePassword()
+        password2El.textContent = generatePassword()
+        messageEl.textContent = ""
+    }
 }
 
 function copyPassword(id) {
