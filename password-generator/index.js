@@ -23,4 +23,6 @@ function generatePassword() {
 function getPasswords() {
     password1El.textContent = generatePassword()
     password2El.textContent = generatePassword()
+    password1El.classList.add('myClass')
+    password2El.classList.add('myClass')
 }

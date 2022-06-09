@@ -50,17 +50,21 @@ main {
     display: flex;
 }
 
-/* TODO: fix p height before passwords are rendered */
 p {
     margin: auto;
-    padding: 4px 15px;
+    height: 39px;
     width: 211px;
     border: none;
     border-radius: 6px;
     background: #273549;
     color: #55F991;
     text-align: center;
-    line-height: 32px;
+}
+
+.myClass {
+    padding: 4px 15px;
+    line-height: 31px;
+    height: auto;
 }
 
 #password1-el {
