@@ -1,3 +1,46 @@
 body {
     margin: 0;
+    background: #1F2937;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+}
+
+h1 {
+    margin-bottom: 10px;
+    width: 354px;
+    font-family: 'Karla', sans-serif;
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 40px;
+    letter-spacing: -0.025em;
+}
+
+h1 span {
+    color: #10B981;
+}
+
+h2 {
+    margin: 0;
+    color: #D5D4D8;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+header {
+    margin: 115px 0 52px 52px;
+    width: 446px;
+    border-bottom: 1px solid #2F3E53;
+}
+
+button {
+    margin-top: 52px;
+    margin-bottom: 35px;
+    padding: 9px 15px;
+    border: none;
+    border-radius: 6px;
+    background: #10B981;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
 }
