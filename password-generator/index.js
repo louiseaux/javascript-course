@@ -4,6 +4,7 @@ const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O"
 "$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",","|",":",";","<",">",".","?",
 "/"];
 
+let length = document.getElementById("length")
 let password1El = document.getElementById("password1-el")
 let password2El = document.getElementById("password2-el")
 let messageEl = document.getElementById("message-el")
@@ -15,7 +16,7 @@ function generateRandomNumber() {
 
 function generatePassword() {
     let password = ""
-    for ( let i = 0; i < 15; i++ ) {
+    for ( let i = 0; i < length.value; i++ ) {
         password += characters[generateRandomNumber()]
     }
     return password

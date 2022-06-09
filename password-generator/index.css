@@ -4,6 +4,7 @@ body {
     background: #1F2937;
     color: #fff;
     font-family: 'Inter', sans-serif;
+    font-size: 16px;
 }
 
 h1 {
@@ -27,13 +28,30 @@ h2 {
     font-weight: 400;
 }
 
+p {
+    margin: 10px 0 0 0;
+}
+
 header {
     margin-top: 115px;
     margin-bottom: 35px;
     border-bottom: 1px solid #2F3E53;
 }
 
+input[type=text] {
+    width: 50px;
+    margin: 4px;
+    padding: 4px;
+    border: none;
+    border-radius: 6px;
+    background: #273549;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+}
+
 #generate-el {
+    cursor: pointer;
     margin-top: 52px;
     margin-bottom: 35px;
     padding: 9px 15px;
@@ -41,6 +59,7 @@ header {
     border-radius: 6px;
     background: #10B981;
     color: #fff;
+    font-family: 'Inter', sans-serif;
     font-size: 16px;
     font-weight: 500;
 }
@@ -50,6 +69,7 @@ main {
 }
 
 button {
+    cursor: pointer;
     margin: auto;
     height: 39px;
     width: 211px;
