@@ -1,5 +1,38 @@
 body {
     margin: 0;
+    background: #1B244A;
+    text-align: center;
+    font-family: 'Cursed Timer ULiL';
+}
+
+h3 {
+    margin-top: 68px;
+    margin-bottom: 21px;
+    color: #EEEEEE;
+    font-family: 'Verdana';
+    font-size: 40px;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 26px;
+    width: 155px;
+    padding: 15px 0;
+    border-radius: 5px;
+    background: #080001;
+    color: #F94F6D;
+    font-size: 90px;
+}
+
+button {
+    width: 45px;
+    height: 45px;
+    border: 2px solid #9AABD8;
+    border-radius: 5px;
+    background: none;
+    color: #9AABD8;
+    font-family: 'Cursed Timer ULiL';
+    font-size: 18px;
 }
 
 .container {
