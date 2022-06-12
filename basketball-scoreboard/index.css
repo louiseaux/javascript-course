@@ -25,6 +25,7 @@ p {
 }
 
 button {
+    margin-bottom: 21px;
     cursor: pointer;
     width: 45px;
     height: 45px;
@@ -39,4 +40,8 @@ button {
 .container {
     display: flex;
     justify-content: space-around;
+}
+
+#game-btn {
+    width: 150px;
 }

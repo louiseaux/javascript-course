@@ -13,3 +13,10 @@ function addScore(id) {
         guestEl.textContent = guestScore
     }
 }
+
+function newGame() {
+    homeScore = 0
+    homeEl.textContent = 0
+    guestScore = 0
+    guestEl.textContent = 0
+}

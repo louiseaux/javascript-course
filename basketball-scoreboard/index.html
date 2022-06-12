@@ -6,7 +6,7 @@
     </head>
     <body>
         <div class="container">
-            <div>
+            <div class="home">
                 <h3>HOME</h3>
                 <p id="home-el">0</p>
 
@@ -14,10 +14,10 @@
                     <button id="home1-btn" onclick="addScore(this.id)">+1</button>
                     <button id="home2-btn" onclick="addScore(this.id)">+2</button>
                     <button id="home3-btn" onclick="addScore(this.id)">+3</button>
-                </div>
-            </div>
+                </div> <!-- buttons -->
+            </div> <!-- home -->
 
-            <div>
+            <div class="guest">
                 <h3>GUEST</h3>
                 <p id="guest-el">0</p>
 
@@ -25,9 +25,10 @@
                     <button id="guest1-btn" onclick="addScore(this.id)">+1</button>
                     <button id="guest2-btn" onclick="addScore(this.id)">+2</button>
                     <button id="guest3-btn" onclick="addScore(this.id)">+3</button>
-                </div>
-            </div>
-        </div>
+                </div> <!-- buttons -->
+            </div> <!-- guest -->
+        </div> <!-- container -->
+        <button id="game-btn" onclick="newGame()">New Game</button>
         <script src="index.js"></script>
     </body>
 </html>
