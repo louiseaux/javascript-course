@@ -17,12 +17,6 @@ h1 {
     letter-spacing: -0.03em;
 }
 
-h2 {
-    margin: 0;
-    font-size: 58px;
-    font-weight: 800;
-}
-
 h3 {
     margin: 0;
     font-size: 20px;
@@ -41,8 +35,16 @@ header {
     font-weight: 800;
 }
 
-#value {
-    margin: 30px auto 25px;
+#num {
+    margin: 0;
+    width: 500px;
+    text-align: center;
+    background: none;
+    border: none;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 58px;
+    font-weight: 800;
 }
 
 button {
