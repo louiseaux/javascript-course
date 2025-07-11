@@ -4,30 +4,32 @@ const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O",
 "$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",","|",":",";","<",">",".","?",
 "/"];
 
-let length = document.getElementById("length")
-let password1El = document.getElementById("password1-el")
-let password2El = document.getElementById("password2-el")
+let passswordLength = document.getElementById("password-length")
+let passwordOneEl = document.getElementById("password1-el")
+let passwordTwoEl = document.getElementById("password2-el")
 let messageEl = document.getElementById("message-el")
 
-function generateRandomNumber() {
-    let randomNumber = Math.floor(Math.random() * characters.length)
-    return randomNumber
+function getRandomCharacter() {
+    let randomChar = Math.floor(Math.random() * characters.length)
+    return characters[randomChar]
 }
 
-function generatePassword() {
-    let password = ""
-    for ( let i = 0; i < length.value; i++ ) {
-        password += characters[generateRandomNumber()]
+function generateRandomPassword() {
+    let randomPassword = ""
+    for ( let i = 0; i < passswordLength.value; i++ ) {
+        randomPassword += getRandomCharacter()
     }
-    return password
+    return randomPassword
 }
 
-function getPasswords() {
-    if ( length.value > 18 ) {
+function generatePasswords() {
+    if ( passswordLength.value > 18 ) {
         alert("Password length must be no more than 18 characters")
+    } else if ( passswordLength.value < 8) {
+        alert("Password length must be at least 8 characters")
     } else {
-        password1El.textContent = generatePassword()
-        password2El.textContent = generatePassword()
+        passwordOneEl.textContent = generateRandomPassword()
+        passwordTwoEl.textContent = generateRandomPassword()
         messageEl.textContent = ""
     }
 }

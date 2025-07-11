@@ -13,10 +13,9 @@
         <header>
             <h1>Generate a <span>random password</span></h1>
             <h2>Never use an insecure password again.</h2>
-            <p>Input password length:
-                <input type="text" id="length">
-            </p>
-            <input type="button" id="generate-el" onclick="getPasswords()" value="Generate passwords"></button>
+            <label for="password-length">Input password length:</label>
+            <input type="number" id="password-length" min="8" max="18" required>
+            <button id="generate-btn" onclick="generatePasswords()">Generate Passwords</button>
         </header>
 
         <main>

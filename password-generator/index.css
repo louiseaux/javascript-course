@@ -28,17 +28,13 @@ h2 {
     font-weight: 400;
 }
 
-p {
-    margin: 10px 0 0 0;
-}
-
 header {
     margin-top: 115px;
     margin-bottom: 35px;
     border-bottom: 1px solid #2F3E53;
 }
 
-input[type=text] {
+input {
     width: 50px;
     margin: 4px;
     padding: 4px;
@@ -50,7 +46,7 @@ input[type=text] {
     font-size: 16px;
 }
 
-#generate-el {
+#generate-btn {
     cursor: pointer;
     margin-top: 52px;
     margin-bottom: 35px;
