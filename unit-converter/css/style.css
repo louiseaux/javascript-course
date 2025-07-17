@@ -1,6 +1,5 @@
 body {
-    margin: auto;
-    width: 550px;
+    margin: 0;
     text-align: center;
     font-family: 'Inter', sans-serif;
     background: #1F2937;
@@ -45,6 +44,7 @@ button {
 }
 
 .section {
+    max-width: 550px;
     margin: 0 auto 24px;
     background: #273549;
     padding: 5px;
