@@ -1,71 +1,68 @@
-html, body {
-    margin: 0;
+body {
+    margin: auto;
+    width: 550px;
     text-align: center;
-    background: #F4F4F4;
-    color: #fff;
     font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    font-weight: 400;
+    background: #1F2937;
+}
+
+/* Layout */
+.hero {
+    background: #6943fe;
+    color: white;
+    padding: 30px 0;
+}
+
+#input {
+    field-sizing: content;
+    text-align: center;
+    background: none;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 58px;
+    font-weight: 800;
+    border: 2px solid #B295FF;
+    border-radius: 5px;
+    padding: 5px 20px;
+    margin: 24px;
+}
+
+button {
+    background: white;
+    color: #3D3D3D;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 30px;
+
+}
+
+.main {
+    background: #1F2937;
+    padding: 30px;
+}
+
+.section {
+    margin: 0 auto 24px;
+    background: #273549;
+    padding: 5px;
 }
 
 /* Typography */
 h1 {
     margin: 0;
-    padding-bottom: 35px;
     font-size: 28px;
-    font-weight: 800;
-    letter-spacing: -0.03em;
 }
 
-h3 {
-    margin: 0;
+.section h3 {
+    color: #CCC1FF;
     font-size: 20px;
     font-weight: 600;
-    color: #5A537B;
 }
 
-p {
-    color: #353535;
-}
-
-/* Layout */
-header {
-    padding: 33px 0;
-    background: linear-gradient(246.26deg, #585DFE 0%, #FB3796 100%);
-    font-weight: 800;
-}
-
-#num {
-    margin: 0;
-    width: 500px;
-    text-align: center;
-    background: none;
-    border: none;
-    color: #fff;
-    font-family: 'Inter', sans-serif;
-    font-size: 58px;
-    font-weight: 800;
-}
-
-button {
-    margin-top: 27px;
-    padding: 9px 28px;
-    background: white;
-    color: #3D3D3D;
-    border: none;
-    border-radius: 5px;
-    font-family: 'Inter';
-    font-size: 16px;
-    font-weight: 500;
-}
-
-.conversions {
-    margin-top: 36px;
-}
-
-.conversion {
-    margin: 24px auto;
-    padding: 30px 0 12px;
-    width: 500px;
-    background: white;
+.section p {
+    color: white;
+    font-size: 14px;
 }
