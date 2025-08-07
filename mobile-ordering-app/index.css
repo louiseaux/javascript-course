@@ -1,3 +1,224 @@
-body {
+html, body {
     margin: 0;
-} 
+    min-width: 600px;
+    font-family: 'Smythe', sans-serif;
+}
+
+/* typography and icons */
+
+h1, h2, h3, h4, p {
+    margin: 0;
+    font-weight: 100;
+}
+
+h1 {
+    font-size: 39px;
+}
+
+h2 {
+    font-size: 22px;
+}
+
+h3 {
+    font-size: 28px;
+}
+
+h4 {
+    font-size: 20px;
+}
+
+p {
+    font-size: 16px
+}
+
+.icon {
+    font-size: 70px;
+}
+
+/* layout */
+
+main {
+    margin: 0 auto;
+    width: 600px;
+}
+
+header {
+    background-image: url('./images/burger.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.header-text {
+    padding: 50px;
+    color: #fff;
+}
+
+.menu-container, .order-container {
+    padding: 0 45px;
+}
+
+/* menu container */
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 45px 0;
+    gap: 10px;
+    border-bottom: 1px solid #D2D2D2;
+}
+
+.ingredients {
+    margin-top: 5px;
+    color: #8B8B8B;
+}
+
+.menu-price {
+    margin-top: 12px;
+}
+
+.add-btn {
+    background-color: #fff;
+    color: #3C3C3C;
+    border: 1px solid #DEDEDE;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+.remove-btn {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+    background: none;
+    color: #bbb;
+    border: none;
+    cursor: pointer;
+}
+
+/* order container */
+
+.order-title {
+    margin-top: 35px;
+    text-align: center;
+}
+
+.order-items {
+    margin-top: 35px;
+}
+
+.order-item {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    gap: 10px;
+}
+
+.remove-btn {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: none;
+    color: #bbb;
+    cursor: pointer;
+}
+
+.total-price {
+    display: flex;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 2px solid #393333;
+}
+
+.order-price {
+    font-size: 20px;
+}
+
+.complete-order-btn {
+    background-color: #16DB99;
+    color: #fff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    padding: 20px;
+    margin-top: 46px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.message-container {
+    background-color: #ECFDF5;
+    color: #065F46;
+    text-align: center;
+    border-radius: 4px;
+    margin-top: 45px;
+    padding: 40px;
+}
+
+/* modal */
+
+.payment-modal {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 524px;
+    width: 524px;
+    border-radius: 4px;
+    filter: drop-shadow(5px 5px 255px rgba(0, 0, 0, 0.5));
+    background-color: #fff;
+}
+
+.payment-modal-inner {
+    width: 500px;
+    margin: 23px auto;
+}
+
+.payment-modal-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 50px;
+}
+
+.payment-form {
+    margin: 27px 10px;
+}
+
+/* modal buttons */
+
+.pay-btn {
+    background-color: #16DB99;
+    color: #fff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+    border-radius: 4px;
+    margin-top: 45px;
+    padding: 24px;
+    width: 100%;
+    cursor: pointer;
+}
+
+/* modal input */
+
+input {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    width: 438px;
+    border: 1px solid #757575;
+    border-radius: 4px;
+    margin-top: 23px;
+    padding: 20px;
+}
+
+/* utility */
+
+.align-right {
+    margin-left: auto;
+}
