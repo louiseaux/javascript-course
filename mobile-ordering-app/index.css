@@ -98,6 +98,10 @@ header {
 
 /* order container */
 
+.order-container {
+    margin-bottom: 45px;
+}
+
 .order-title {
     margin-top: 35px;
     text-align: center;

@@ -26,8 +26,10 @@ function handleAddItemBtnClick(itemId) {
 }
 
 function handleRemoveItemBtnClick(itemId) {
-    myOrder.splice(itemId, 1)
-    render()
+    if (paymentModal.style.display === 'none') {
+        myOrder.splice(itemId, 1)
+        render()
+    }
 }
 
 paymentForm.addEventListener('submit', function(e) {
