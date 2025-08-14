@@ -1,0 +1,14 @@
+{
+  "name": "estate-agent",
+  "description": "https://scrimba.com/s058cfo/s0hm2b9tqt/head",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vite": "latest"
+  },
+  "devDependencies": {}
+}
