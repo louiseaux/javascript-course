@@ -1,0 +1,14 @@
+{
+  "name": "war-game",
+  "description": "https://scrimba.com/s01ubai/s06fofd580/head",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vite": "latest"
+  },
+  "devDependencies": {}
+}
