@@ -32,6 +32,8 @@ function handleAddClick(movieId) {
     }
 }
 
+// TODO: handle remove click
+
 function renderWatchlist(watchlist) {
     if (watchlistContainer) {
         watchlistContainer.innerHTML = ""
@@ -46,18 +48,31 @@ function renderWatchlist(watchlist) {
 }
 
 function handleSearchClick() {
+    // TODO: add page number
     fetch(`http://www.omdbapi.com/?apikey=${apiKey}&s=${mySearch.value}&type=movie`)
         .then(res => res.json())
         .then(data => {
-            movieContainer.innerHTML = ""
-            for (let movie of data.Search) {
-                fetch(`http://www.omdbapi.com/?apikey=${apiKey}&i=${movie.imdbID}`)
-                    .then(res => res.json())
-                    .then(data => {
-                        if (data.Poster !== 'N/A') {
-                            movieContainer.innerHTML += getMovieHtml(data)
-                        }
-                    })
+            if (data.Response === 'True') {
+                movieContainer.innerHTML = ""
+                for (let movie of data.Search) {
+                    fetch(`http://www.omdbapi.com/?apikey=${apiKey}&i=${movie.imdbID}`)
+                        .then(res => res.json())
+                        .then(data => {
+                            // TODO: replace with image unavailable
+                            if (data.Poster !== 'N/A') {
+                                movieContainer.innerHTML += getMovieHtml(data)
+                            }
+                        })
+                }
+            }
+            else {
+                mySearch.placeholder = "Searching something with no data"
+                movieContainer.innerHTML = `
+                    <!-- TODO: set width on placeholder text -->
+                    <div class="placeholder">
+                        <p class="placeholder-text">Unable to find what you’re looking for. Please try another search.</p>
+                    </div>
+                `
             }
         })
     
@@ -70,7 +85,9 @@ function getMovieHtml(movie) {
             <div>
                 <div class="movie-header">
                     <h3>${movie.Title}</h3>
-                    <h4 class="movie-rating">⭐ ${movie.imdbRating}</h4>
+                    <h4 class="movie-rating">
+                        <i class="fa-solid fa-star"></i> ${movie.imdbRating}
+                    </h4>
                 </div>
                 <div class="movie-info">
                     <h4>${movie.Runtime}</h4>
@@ -79,10 +96,10 @@ function getMovieHtml(movie) {
                         data-add=${movie.imdbID}>
                         <i class="fa-solid fa-circle-plus"
                         data-add=${movie.imdbID}></i>
-                        Watchlist
+                        Watchlist <!-- TODO: switch to remove if already added to watchlist -->
                     </span>
                 </div>
-                <p class="movie-plot">${movie.Plot}</p>
+                <p class="movie-plot">${movie.Plot}</p> <!-- TODO: add read more button -->
             </div>
         </div>`
 }

@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <title>Find Your Film</title>
+        <!-- TODO: fix for smaller screens -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- CSS -->
         <link rel="stylesheet" href="index.css">
@@ -16,20 +17,22 @@
         <header>
             <div class="site-header container">
                 <h1>Find your film</h1>
+                <!-- TODO: change colour on hover -->
                 <a href="watchlist.html">My Watchlist</a>
             </div>
 
             <form id="search-form">
                 <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" id="my-search" placeholder="Search for a movie" required />
+                <input type="text" id="my-search" placeholder="Search for a movie" />
                 <button type="submit">Search</button>
             </form>
         </header>
         <main>
             <div class="movies container" id="movies">
+                <!-- TODO: centre on page -->
                 <div class="placeholder">
                     <i class="fa-solid fa-film"></i>
-                    <p class="placeholder-text">Start exploring</p>
+                    <p class="placeholder-text explore-text">Start exploring</p>
                 </div>
             </div>
         </main>
