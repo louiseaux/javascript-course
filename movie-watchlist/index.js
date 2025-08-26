@@ -8,12 +8,14 @@ const moviesFromLocalStorage = JSON.parse( localStorage.getItem("myWatchlist") )
 
 if (moviesFromLocalStorage) {
     myWatchlist = moviesFromLocalStorage
-    renderWatchlist(myWatchlist)
+    if (watchlistContainer) {
+        renderWatchlist(myWatchlist)
+    }
 }
 
 document.addEventListener('click', function(e) {
-    if (e.target.dataset.add) {
-        handleAddClick(e.target.dataset.add)
+    if (e.target.dataset.watchlist) {
+        handleWatchlistClick(e.target)
     }
 })
 
@@ -24,49 +26,68 @@ if (searchForm) {
     })
 }
 
-function handleAddClick(movieId) {
-    if (!myWatchlist.includes(movieId)) {
-        console.log(movieId)
+function handleWatchlistClick(targetMovie) {
+    const movieId = targetMovie.dataset.watchlist
+    if (myWatchlist.includes(movieId)) {
+        myWatchlist = myWatchlist.filter(movie => movie !== movieId)
+        localStorage.setItem("myWatchlist", JSON.stringify(myWatchlist))
+        if (watchlistContainer) {
+            renderWatchlist(myWatchlist)
+        }
+        targetMovie.previousElementSibling.classList.remove('fa-circle-minus')
+        targetMovie.previousElementSibling.classList.add('fa-circle-plus')
+        targetMovie.textContent = 'Watchlist'
+    }
+    else {
         myWatchlist.push(movieId)
         localStorage.setItem("myWatchlist", JSON.stringify(myWatchlist))
+        targetMovie.previousElementSibling.classList.remove('fa-circle-plus')
+        targetMovie.previousElementSibling.classList.add('fa-circle-minus')
+        targetMovie.textContent = 'Remove'
     }
 }
 
-// TODO: handle remove click
-
 function renderWatchlist(watchlist) {
-    if (watchlistContainer) {
-        watchlistContainer.innerHTML = ""
+    if (watchlist.length !== 0) {
+        let watchlistHtml = ''
         for (let movieId of watchlist) {
             fetch(`http://www.omdbapi.com/?apikey=${apiKey}&i=${movieId}`)
                     .then(res => res.json())
                     .then(data => {
-                        watchlistContainer.innerHTML += getMovieHtml(data)
+                        watchlistHtml += getMovieHtml(data)
+                        watchlistContainer.innerHTML = watchlistHtml
                     })
         }
+    }
+    else {
+        watchlistContainer.innerHTML = `
+            <div class="placeholder">
+                <p class="placeholder-text">Your watchlist is looking a little empty...</p>
+                <a href="index.html">
+                    <i class="fa-solid fa-circle-plus"></i>
+                    Let's add some movies!
+                </a>
+            </div>
+        `
     }
 }
 
 function handleSearchClick() {
-    // TODO: add page number
     fetch(`http://www.omdbapi.com/?apikey=${apiKey}&s=${mySearch.value}&type=movie`)
         .then(res => res.json())
         .then(data => {
             if (data.Response === 'True') {
-                movieContainer.innerHTML = ""
+                let movieHtml = ''
                 for (let movie of data.Search) {
                     fetch(`http://www.omdbapi.com/?apikey=${apiKey}&i=${movie.imdbID}`)
                         .then(res => res.json())
                         .then(data => {
-                            // TODO: replace with image unavailable
-                            if (data.Poster !== 'N/A') {
-                                movieContainer.innerHTML += getMovieHtml(data)
-                            }
+                            movieHtml += getMovieHtml(data)
+                            movieContainer.innerHTML = movieHtml
                         })
                 }
             }
             else {
-                mySearch.placeholder = "Searching something with no data"
                 movieContainer.innerHTML = `
                     <!-- TODO: set width on placeholder text -->
                     <div class="placeholder">
@@ -79,9 +100,14 @@ function handleSearchClick() {
 }
 
 function getMovieHtml(movie) {
+    const poster = movie.Poster === 'N/A' ? 'images/image-unavailable.jpg' : movie.Poster // TODO: fix movie poster not found
+    const icon = myWatchlist.includes(movie.imdbID) ? 'fa-circle-minus' : 'fa-circle-plus'
+    const watchlistOrRemove = myWatchlist.includes(movie.imdbID) ? 'Remove' : 'Watchlist'
+    const readMore = movie.Plot.endsWith('...') ? '<button class="movie-btn">Read more</button>' : ''
+
     return `
         <div class="movie">
-            <img src="${movie.Poster}" class="movie-img">
+            <img src="${poster}" class="movie-img">
             <div>
                 <div class="movie-header">
                     <h3>${movie.Title}</h3>
@@ -92,14 +118,18 @@ function getMovieHtml(movie) {
                 <div class="movie-info">
                     <h4>${movie.Runtime}</h4>
                     <h4>${movie.Genre}</h4>
-                    <span class="watchlist-btn" id="watchlist-btn"
-                        data-add=${movie.imdbID}>
-                        <i class="fa-solid fa-circle-plus"
-                        data-add=${movie.imdbID}></i>
-                        Watchlist <!-- TODO: switch to remove if already added to watchlist -->
+                    <span>
+                        <i class="fa-solid ${icon}"></i>
+                        <button class="watchlist-btn" data-watchlist=${movie.imdbID}>
+                            ${watchlistOrRemove}
+                        </button>
                     </span>
                 </div>
-                <p class="movie-plot">${movie.Plot}</p> <!-- TODO: add read more button -->
+                <p class="movie-plot">
+                    ${movie.Plot}
+                    ${readMore}
+                </p>
             </div>
-        </div>`
+        </div>
+    `
 }
