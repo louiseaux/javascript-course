@@ -33,10 +33,11 @@ function handleWatchlistClick(targetMovie) {
         localStorage.setItem("myWatchlist", JSON.stringify(myWatchlist))
         if (watchlistContainer) {
             renderWatchlist(myWatchlist)
+        } else {
+            targetMovie.previousElementSibling.classList.remove('fa-circle-minus')
+            targetMovie.previousElementSibling.classList.add('fa-circle-plus')
+            targetMovie.textContent = 'Watchlist'
         }
-        targetMovie.previousElementSibling.classList.remove('fa-circle-minus')
-        targetMovie.previousElementSibling.classList.add('fa-circle-plus')
-        targetMovie.textContent = 'Watchlist'
     }
     else {
         myWatchlist.push(movieId)
