@@ -1,0 +1,12 @@
+{
+  "name": "golddigger",
+  "version": "1.0.0",
+  "description": "A platform for investing in gold based on live prices",
+  "license": "ISC",
+  "author": "Ashlyn Barry",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
