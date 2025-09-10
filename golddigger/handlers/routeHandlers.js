@@ -1,4 +1,8 @@
 import { goldPrices } from "../data/goldPrices.js";
+import { parseJSONBody } from "../utils/parseJSONBody.js";
+import { sendResponse } from "../utils/sendResponse.js";
+import { addNewTransaction } from "../utils/addNewTransaction.js"
+import { transactionEvents } from '../events/transactionEvents.js'
 
 export async function handlePrices(req, res) {
     res.statusCode = 200
@@ -16,5 +20,17 @@ export async function handlePrices(req, res) {
                 price: randomPrice
             })}\n\n`
         )
-    }, 3000)
+    }, 2000)
+}
+
+export async function handleTransaction(req, res) {
+    
+    try {
+        const parsedBody = await parseJSONBody(req)
+        await addNewTransaction(parsedBody)
+        transactionEvents.emit('transaction-added', parsedBody)
+        sendResponse(res, 201, 'application/json', JSON.stringify(parsedBody))
+    } catch (err) {
+        sendResponse(res, 400, 'application/json', JSON.stringify({error: err}))
+    }
 }
